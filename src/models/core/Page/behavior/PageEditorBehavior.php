@@ -121,8 +121,14 @@ class PageEditorBehavior implements EditorBehavior {
                 ->getRequest()
                 ->getLanguage();
 
-            foreach ($model->getRelated() as $p) {
-                $options[$p->id] = $p->createPath($language)->toString(prependSlash: false);
+            $searchUrl = $this->editor->createSearchUrl();
+
+            if (!is_null($model)) {
+                $searchUrl->setQueryArgument(AdminPageEditor::QUERY_EXCLUDE, $model->getId());
+
+                foreach ($model->getRelated() as $p) {
+                    $options[$p->id] = $p->createPath($language)->toString(prependSlash: false);
+                }
             }
 
             $relatedSelect = new MultiSelect(
@@ -133,8 +139,7 @@ class PageEditorBehavior implements EditorBehavior {
             );
 
             $relatedSelect->setAsyncSearch(
-                $this->editor->createSearchUrl()
-                    ->setQueryArgument(AdminPageEditor::QUERY_EXCLUDE, $model->getId()),
+                $searchUrl,
                 Setting::fromName(
                     RouteChasmEnvironment::SETTING_MIN_SEARCH_QUERY_LENGTH,
                     true,

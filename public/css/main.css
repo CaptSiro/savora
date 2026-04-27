@@ -1,50 +1,70 @@
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
 :root {
-    --container-0: #171717;
-    --container-1: #2e2e2e;
-    --container-2: #454545;
-    --container-3: #5d5d5d;
-    --container-4: #747474;
-    --text-0: #ffffff;
-    --text-1: #e8e8e8;
-    --text-2: #d1d1d1;
+    /* Dark theme */
 
-    --accent-0: #9b3427;
-    --accent-1: #b34a32;
-    --accent-2: #c75c38;
-    --accent-3: #d17147;
+    --container-0: #121417;
+    --container-1: #1a1d21;
+    --container-2: #23272d;
+    --container-3: #2d323a;
+    --container-4: #383e47;
 
-    --success: #0aa25e;
-    --error: #b21351;
+    --text-0: #f5f7fa;
+    --text-1: #d6dbe1;
+    --text-2: #aeb6bf;
+
+    /* fresh green accent (clean, modern, not neon) */
+    --accent-0: #2f855a;
+    --accent-1: #38a169;
+    --accent-2: #48bb78;
+    --accent-3: #68d391;
+
+    --success: #22c55e;
+    --error: #ef4444;
 
     --page-width: 1200px;
-    --border-radius: 8px;
-    --border-radius-smaller: 4px;
+
+    --border-radius: 10px;
+    --border-radius-smaller: 6px;
+
     --gap: 16px;
     --gap-smaller: 8px;
-    --animation-duration: 250ms;
+
+    --animation-duration: 200ms;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
+        /* Light theme */
+
         --container-0: #ffffff;
-        --container-1: #f2f2f2;
-        --container-2: #e0e0e0;
-        --container-3: #cfcfcf;
-        --container-4: #bdbdbd;
+        --container-1: #f8fafc;
+        --container-2: #eef2f6;
+        --container-3: #e2e8f0;
+        --container-4: #cbd5e1;
 
-        --text-0: #1a1a1a;
-        --text-1: #333333;
-        --text-2: #4d4d4d;
+        --text-0: #0f172a;
+        --text-1: #1e293b;
+        --text-2: #475569;
 
-        --accent-0: #9b3427;
-        --accent-1: #b34a32;
-        --accent-2: #c75c38;
-        --accent-3: #d17147;
+        /* same hue, balanced for light surfaces */
+        --accent-0: #2f855a;
+        --accent-1: #38a169;
+        --accent-2: #48bb78;
+        --accent-3: #68d391;
 
-        --success: #0aa25e;
-        --error: #b21351;
+        --success: #22c55e;
+        --error: #ef4444;
+
+        --page-width: 1200px;
+
+        --border-radius: 10px;
+        --border-radius-smaller: 6px;
+
+        --gap: 16px;
+        --gap-smaller: 8px;
+
+        --animation-duration: 200ms;
     }
 }
 

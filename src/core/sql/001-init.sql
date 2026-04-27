@@ -335,7 +335,7 @@ CREATE TABLE IF NOT EXISTS `core_user` (
 
 INSERT INTO `core_user` (id_user, username, password, tag)
 VALUES (1, 'Root', '', 'root'),
-       (2, 'Anonymous', '', 'anonymous');
+    (2, 'Anonymous', '', 'anonymous');
 
 
 
