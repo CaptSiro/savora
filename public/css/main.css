@@ -1,8 +1,6 @@
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
 :root {
-    /* Dark theme */
-
     --container-0: #121417;
     --container-1: #1a1d21;
     --container-2: #23272d;
@@ -13,7 +11,6 @@
     --text-1: #d6dbe1;
     --text-2: #aeb6bf;
 
-    /* fresh green accent (clean, modern, not neon) */
     --accent-0: #2f855a;
     --accent-1: #38a169;
     --accent-2: #48bb78;
@@ -35,8 +32,6 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        /* Light theme */
-
         --container-0: #ffffff;
         --container-1: #f8fafc;
         --container-2: #eef2f6;
@@ -47,7 +42,6 @@
         --text-1: #1e293b;
         --text-2: #475569;
 
-        /* same hue, balanced for light surfaces */
         --accent-0: #2f855a;
         --accent-1: #38a169;
         --accent-2: #48bb78;
@@ -55,16 +49,6 @@
 
         --success: #22c55e;
         --error: #ef4444;
-
-        --page-width: 1200px;
-
-        --border-radius: 10px;
-        --border-radius-smaller: 6px;
-
-        --gap: 16px;
-        --gap-smaller: 8px;
-
-        --animation-duration: 200ms;
     }
 }
 
