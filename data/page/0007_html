@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Whether you have a question about recipes, feedback, or just want to share your culinary success, feel free to reach out.</p>
+    <h2>Get in Touch</h2>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@recipesite.com">support@recipesite.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+123456789">+1 234 567 89</a></li>
+        <li><strong>Follow us:</strong></li>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </ul>
+    <h2>Our Location</h2>
+    <p>123 Recipe Lane, Flavor Town, NY, 12345</p>
+    <h2>Business Hours</h2>
+    <p>Mon - Fri: 9 AM - 5 PM<br>Sat: 10 AM - 4 PM<br>Sun: Closed</p>
+</div>
