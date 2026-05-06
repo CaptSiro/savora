@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 28, 2026 at 12:48 PM
+-- Generation Time: May 06, 2026 at 02:55 PM
 -- Server version: 8.2.0
 -- PHP Version: 8.2.13
 
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `core_group` (
   `is_editable` tinyint NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_group`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `core_group`
@@ -182,7 +182,8 @@ CREATE TABLE IF NOT EXISTS `core_group` (
 INSERT INTO `core_group` (`id_group`, `name`, `is_editable`) VALUES
 (1, 'Default', 0),
 (2, 'Root', 0),
-(3, 'Admin', 0);
+(3, 'Admin', 0),
+(4, 'Editor', 1);
 
 -- --------------------------------------------------------
 
@@ -199,6 +200,21 @@ CREATE TABLE IF NOT EXISTS `core_groups_x_resources` (
   KEY `id_resource` (`id_resource`),
   KEY `id_privilege` (`id_privilege`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `core_groups_x_resources`
+--
+
+INSERT INTO `core_groups_x_resources` (`id_group`, `id_resource`, `id_privilege`) VALUES
+(4, 2, 1),
+(4, 2, 2),
+(4, 2, 3),
+(4, 3, 1),
+(4, 3, 2),
+(4, 3, 3),
+(4, 6, 1),
+(4, 6, 2),
+(4, 6, 3);
 
 -- --------------------------------------------------------
 
@@ -715,7 +731,7 @@ CREATE TABLE IF NOT EXISTS `core_sideloader` (
   `path` varchar(255) NOT NULL,
   PRIMARY KEY (`id_cache`),
   KEY `hash` (`hash`)
-) ENGINE=MyISAM AUTO_INCREMENT=120 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `core_sideloader`
@@ -840,7 +856,8 @@ INSERT INTO `core_sideloader` (`id_cache`, `hash`, `path`) VALUES
 (116, 'DXZ5', 'C:\\programming\\php\\savora\\src\\components\\pages\\Article\\article.css'),
 (117, 'An3e', 'C:\\programming\\php\\savora\\src\\components\\core\\Admin\\SptfTests\\sptf.js'),
 (118, 'aMWI', 'C:\\programming\\php\\savora\\src\\components\\core\\Admin\\SptfTests\\sptf.css'),
-(119, 'YJOt', 'C:\\programming\\php\\savora\\src\\components\\pages\\related-card.css');
+(119, 'YJOt', 'C:\\programming\\php\\savora\\src\\components\\pages\\related-card.css'),
+(120, 'b-cS', 'C:\\programming\\php\\savora\\src\\components\\core\\Admin\\PrivilegeResourceMap\\privilege-resource-map.css');
 
 -- --------------------------------------------------------
 
@@ -857,7 +874,7 @@ CREATE TABLE IF NOT EXISTS `core_user` (
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `tag` (`tag`),
   KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `core_user`
@@ -865,7 +882,8 @@ CREATE TABLE IF NOT EXISTS `core_user` (
 
 INSERT INTO `core_user` (`id_user`, `username`, `password`, `tag`) VALUES
 (1, 'Root', '', 'root'),
-(2, 'Anonymous', '', 'anonymous');
+(2, 'Anonymous', '', 'anonymous'),
+(4, 'Buzz', '$2y$10$qoS1xtUjC0ulL1GEGnmjx.KYLhMwXxBk0sRP4ewVXiF5WbwzoXZre', 'fizz');
 
 -- --------------------------------------------------------
 
@@ -888,7 +906,9 @@ CREATE TABLE IF NOT EXISTS `core_users_x_groups` (
 INSERT INTO `core_users_x_groups` (`id_user`, `id_group`) VALUES
 (1, 2),
 (1, 3),
-(2, 1);
+(2, 1),
+(4, 3),
+(4, 4);
 
 -- --------------------------------------------------------
 

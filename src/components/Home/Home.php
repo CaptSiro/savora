@@ -34,17 +34,6 @@ class Home extends ContainerContent {
 
 
 
-    public function createDocsLink(): ?string {
-        $docs = Docs::getInstance();
-        if (!$docs->isBound()) {
-            return null;
-        }
-
-        return $docs
-            ->createUrl()
-            ->toString();
-    }
-
     public function getProjectLink(): ?string {
         return App::getEnvStatic()
             ->get(RouteChasmEnvironment::ENV_PROJECT_LINK);
