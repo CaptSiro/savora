@@ -117,7 +117,7 @@ function form_select_onOptionSelected(container, option) {
     $('.select-search', container)?.blur();
     $('.dropdown-item.cursor', container)?.classList.remove('cursor');
 
-    const dropdownItem = $(`.dropdown-item[data-value="${value}"]`, container);
+    const dropdownItem = $(`.dropdown-item[data-value="${option.value}"]`, container);
     dropdownItem?.classList.add('cursor');
 }
 

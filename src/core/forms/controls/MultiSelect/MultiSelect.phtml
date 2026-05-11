@@ -3,11 +3,8 @@
 use components\core\Html\Html;
 use components\core\Icon;
 use core\forms\controls\MultiSelect\MultiSelect;
-use core\forms\controls\Select\Select;
-use core\sideloader\importers\Javascript\Javascript;
 
-Javascript::import(Select::getStaticResource('select.js'));
-Javascript::import($this->getResource('multiselect.js'));
+MultiSelect::importAssets();
 
 $valuesEscaped = [];
 foreach ($this->values as $value => $label) {

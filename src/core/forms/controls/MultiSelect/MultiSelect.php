@@ -9,6 +9,7 @@ use core\forms\controls\Select\Select;
 use core\html\Attribute;
 use core\html\HtmlAttribute;
 use core\RouteChasmEnvironment;
+use core\sideloader\importers\Javascript\Javascript;
 use core\view\Renderer;
 
 class MultiSelect implements Control, Attribute {
@@ -19,6 +20,13 @@ class MultiSelect implements Control, Attribute {
     public const DATA_ATTRIBUTE_SEARCH_FUNCTION = Select::DATA_ATTRIBUTE_SEARCH_FUNCTION;
     public const DATA_ATTRIBUTE_ON_OPTION_SELECTED_FUNCTION = Select::DATA_ATTRIBUTE_ON_OPTION_SELECTED_FUNCTION;
     public const DATA_ATTRIBUTE_ON_OPTION_DESELECTED_FUNCTION = 'on-option-deselected';
+
+
+
+    public static function importAssets(): void {
+        Select::importAssets();
+        Javascript::import(MultiSelect::getStaticResource('multiselect.js'));
+    }
 
 
 
