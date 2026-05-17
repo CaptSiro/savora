@@ -9,7 +9,6 @@ use core\forms\controls\Select\Select;
 use core\html\Attribute;
 use core\html\HtmlAttribute;
 use core\RouteChasmEnvironment;
-use core\sideloader\importers\Javascript\Javascript;
 use core\view\Renderer;
 
 class MultiSelect implements Control, Attribute {
@@ -23,19 +22,15 @@ class MultiSelect implements Control, Attribute {
 
 
 
-    public static function importAssets(): void {
-        Select::importAssets();
-        Javascript::import(MultiSelect::getStaticResource('multiselect.js'));
-    }
-
-
-
     /**
      * @param string $value
      * @return array<string>
      */
     public static function parse(string $value): array {
-        return explode(';', $value);
+        return array_values(array_filter(
+            explode(';', $value),
+            fn(string $item) => $item !== ''
+        ));
     }
 
 
